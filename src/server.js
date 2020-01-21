@@ -12,7 +12,15 @@ const session = require('express-session');
 
 const { url } = require('./config/database.js');
 
-mongoose.connect(url, {useNewUrlParser: true});
+mongoose
+.connect(url, {
+useUnifiedTopology: true,
+useNewUrlParser: true,
+})
+.then(() => console.log('DB Connected!'))
+.catch(err => {
+console.error(err);
+});
 
 require('./config/passport')(passport);
 

@@ -4,6 +4,7 @@
   "description": "Plataforma que permite visualizar imagenes de diferentes tematicas, permite a usuarios de la plataforma crear tableros personales donde puede agregar editar y eliminar images de diferentes tematicas segun su gusto.",
   "main": "index.js",
   "scripts": {
+    "dev": "nodemon src/index.js",
     "start": "node src/server.js",
     "nodemon": "node src/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -27,10 +28,17 @@
     "ejs": "^3.0.1",
     "express": "^4.17.1",
     "express-session": "^1.17.0",
+    "fs-extra": "^8.1.0",
     "mongoose": "^5.8.9",
     "morgan": "^1.9.1",
+    "multer": "^1.4.2",
     "parser": "^0.1.4",
     "passport": "^0.4.1",
-    "passport-local": "^1.0.0"
+    "passport-local": "^1.0.0",
+    "timeago.js": "^4.0.2",
+    "uuid": "^3.4.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
   }
 }

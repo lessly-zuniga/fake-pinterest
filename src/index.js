@@ -8,7 +8,7 @@ const uuid = require('uuid/v4');
 const app = express();
 
 //Settings
-app.set('port', process.env.PORT || 3000);
+app.set('port', process.env.PORT || 3001);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 

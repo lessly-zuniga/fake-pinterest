@@ -1,41 +1,26 @@
 module.exports = (app, passport) => {
-	
-app.get('/', (req, res) => {
-	res.render('index');
-})
-	// index routes
-//	app.get('/', (req, res) => {
-//		console.log('algo');
-		
-//		res.render('index');
-		//res.render('index.ejs'/*, {
-		//	message: req.flash('loginMessage')
-		//}*/);
-//	});
 
-	// app.get('/', (req, res) => {
-	// 	res.render('./views/index.ejs');
-	// });
+	
+	// index routes
+	app.get('/', (req, res) => {
+		res.render('index');
+	})
 
 	//login view
-	//app.get('/login', (req, res) => {
-	//	res.render('login.ejs', {
-	//		message: req.flash('loginMessage')
-	//	});
-	//});
+	app.get('/login', (req, res) => {
+		res.render('login', {
+			message: req.flash('loginMessage')
+		});
+	});
+	app.post('./login', (req, res) => {});
 
-	//app.post('/login', passport.authenticate('local-login', {
-	//	successRedirect: '/profile',
-	//	failureRedirect: '/login',
-	//	failureFlash: true
-	//}));
 
 	// signup view
-	//app.get('/signup', (req, res) => {
-	//	res.render('signup', {
-	//		message: req.flash('signupMessage')
-	//	});
-	//});
+	app.get('/signup', (req, res) => {
+		res.render('signup', {
+			message: req.flash('signupMessage')
+		});
+	});
 
 	//app.post('/signup', passport.authenticate('local-signup', {
 	//	successRedirect: '/profile',

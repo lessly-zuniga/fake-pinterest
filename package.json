@@ -4,9 +4,9 @@
   "description": "Plataforma que permite visualizar imagenes de diferentes tematicas, permite a usuarios de la plataforma crear tableros personales donde puede agregar editar y eliminar images de diferentes tematicas segun su gusto.",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon src/index.js",
-    "start": "node src/feed/index.html",
-    "nodemon": "node src/server.js",
+    "dev": "node src/server.js",
+    "start": "node src/server.js",
+    "nodemon": "src/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

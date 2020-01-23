@@ -1,9 +1,11 @@
 const { Router } = require('express');
 const router = Router();
+const path = require('path');
+const {unlink} = require('fs-extra');
 
 const Image = require('../app/models/image');
 
-router.get('/', async(req, res) => {
+router.get('/login', async(req, res) => {
     const images = await Image.find();
     res.render('wall', {images});
 });
@@ -24,15 +26,21 @@ router.post('/upload', async(req, res) => {
 
     await image.save();
 
-    res.redirect('/');
+    res.redirect('/login');
 });
 
-router.get('/image/:id', (req, res) => {
-    res.send('Profile Image');
+router.get('/image/:id', async(req, res) => {
+    const {id} = req.params;
+    const image = await Image.findById(id);
+    console.log(image);
+    res.render('image-profile', {image});
 });
 
-router.get('/image/:id/delete', (req, res) => {
-    res.send('Image deleted');
+router.get('/image/:id/delete', async(req, res) => {
+    const {id} = req.params;
+    const image = await Image.findByIdAndDelete(id);
+    await unlink(path.resolve('./src/public' + image.path));
+    res.redirect('/login');
 });
 
 module.exports = router;

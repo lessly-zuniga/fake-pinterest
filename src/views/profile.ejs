@@ -9,7 +9,7 @@
     <!--Bootstrap 4 CDN-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
    
-    <title>Profile Page</title>
+    <title>Profile</title>
 
   </head>
   <body>
@@ -18,22 +18,22 @@
     
     <div class="container">
       <header class="text-center">
-        <h1>Profile Page</h1>
-        <a href="/logout" class="btn btn-light btn-sm">
+        <h1>Profile</h1>
+        <!-- <a href="/logout" class="btn btn-light btn-sm">
           Logout
-        </a>
+        </a> -->
       </header>
       <hr>
       <div class="container">
         <div class="col-sm-6">
           <div class="card">
             <div class="card-body">
-              <h3 class="card-title"><span class="fa fa-user"></span> Local</h3>
-              <p>
-                <strong>id</strong> : <%= user._id %> <br>
+              <h6 class="card-title"><span class="fa fa-user"></span> : <%= user.local.email %></h6>
+              <!-- <p>
+                <strong>id</strong> : <%= user._id %> <br>-->
                 <strong>email</strong> : <%= user.local.email %> <br>
                 <strong>password</strong> : <%= user.local.password %>
-              </p>
+              </p> 
               <a href="/logout" class="btn btn-light btn-sm">
                 Logout
               </a>

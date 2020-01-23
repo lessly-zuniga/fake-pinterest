@@ -19,7 +19,9 @@ const app = express();
 require('./config/database');
 
 //Settings
-//app.set('port', process.env.PORT || 3000);
+app.set('port', process.env.PORT || 3000);
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'ejs');
 
 // middlewares
 app.use(morgan('dev'));
@@ -35,18 +37,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
 
-//Global Variables
-app.set('port', process.env.PORT || 3000);
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'ejs');
 
-
-//Routes
-require('./app/routes.js')(app, passport);
-
-
-//Middlewares
-app.use(morgan('dev'));
 app.use(express.urlencoded({extended: false}));
 const storage = multer.diskStorage({
     destination:path.join(__dirname, 'public/img/uploads'),
@@ -61,8 +52,15 @@ app.use((req, res, next) => {
     app.locals.format = format;
     next();
 })
+
+
+
 //Routes
+require('./app/routes.js')(app, passport);
+
 app.use(require('./routes-images/index'));
+
+
 
 //Static Files
 app.use(express.static(path.join(__dirname, 'public')));
@@ -75,8 +73,7 @@ app.listen(app.get('port'), () => {
 })
 
 
-mongoose
-.connect(url, {
+mongoose.connect(url, {
 useUnifiedTopology: true,
 useNewUrlParser: true,
 })

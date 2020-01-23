@@ -19,7 +19,7 @@ const app = express();
 require('./config/database');
 
 //Settings
-app.set('port', process.env.PORT || 3000);
+//app.set('port', process.env.PORT || 3000);
 
 // middlewares
 app.use(morgan('dev'));

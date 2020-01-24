@@ -1,5 +1,5 @@
 module.exports = (app, passport) => {
-	
+
 	// index routes
 	app.get('/', (req, res) => {
 		res.render('index');
@@ -14,7 +14,7 @@ module.exports = (app, passport) => {
 	app.post('./login', (req, res) => {});
 
 	app.post('/login', passport.authenticate('local-login', {
-		successRedirect: '/profile',
+		successRedirect: '/feed',
 		failureRedirect: '/login',
 		failureFlash: true
 	}));
@@ -28,22 +28,22 @@ module.exports = (app, passport) => {
 
 	app.post('./signup', (req, res) =>{})
 	app.post('/signup', passport.authenticate('local-signup', {
-		successRedirect: '/profile',
+		successRedirect: '/feed',
 		failureRedirect: '/signup',
 		failureFlash: true // allow flash messages
 	}));
 
 	//profile view
 
-	 app.get('/profile', isLoggedIn, (req, res) => {
-	 	res.render('profile',  {
-	 		user: req.user
-	 	});
-	 });
+	//  app.get('/profile', isLoggedIn, (req, res) => {
+	//  	res.render('profile',  {
+	//  		user: req.user
+	//  	});
+	//  });
 
 	// logout
 
-	app.get('/logout', (req, res) => {
+app.get('/logout', (req, res) => {
 		req.logout();
 		res.redirect('/');
 	});
@@ -57,4 +57,5 @@ function isLoggedIn (req, res, next) {
 	}
 
 	res.redirect('/');
-} 
+}
+

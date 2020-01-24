@@ -2,18 +2,18 @@
   "name": "fake-pinterest",
   "version": "1.0.0",
   "description": "Plataforma que permite visualizar imagenes de diferentes tematicas, permite a usuarios de la plataforma crear tableros personales donde puede agregar editar y eliminar images de diferentes tematicas segun su gusto.",
-  "main": "index.js",
+  "main": "index.ejs",
   "scripts": {
-    "dev": "node src/server.js",
-    "start": "node src/server.js",
-    "nodemon": "src/server.js",
+    "dev": "nodemon src/index.js",
+    "start": "nodemon src/index.js",
+    "nodemon": "node src/index.ejs",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/lessly-zuniga/fake-pinterest.git"
   },
-  "author": "Erika Sanchez & Lesly Zúniga",
+  "author": "Erika Sánchez & Lesly Zúniga",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/lessly-zuniga/fake-pinterest/issues"

@@ -1,24 +1,29 @@
-<<<<<<< HEAD
-.login {
-}
-  
-  .signup {
-    
-=======
-/* .login {
-    background: #56ab2f; 
-  background: -webkit-linear-gradient(to right, #a8e063, #56ab2f);  
-  background: linear-gradient(to right, #a8e063, #56ab2f);
-  }
-  
-  .signup {
-    background: #000428; 
-    background: -webkit-linear-gradient(to right, #004e92, #000428); 
-    background: linear-gradient(to right, #004e92, #000428); 
-  } */
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+
+
   #trans{
     
     text-align:center;
     justify-content: center;
->>>>>>> ac1f6fa2906b3f1ef21b4a2ae18816d9744b9019
   }
+  h2{
+    font-family: 'Montserrat', sans-serif;
+    color: #AA123B;
+    
+  }
+  h1, .name{
+    
+    font-family: 'Montserrat', sans-serif;
+    color: #AA123B;
+    font-size: 1.5rem;
+
+    
+   
+   
+  }
+  
+  /* h1{
+    font-family: 'Montserrat', sans-serif;
+    color: #AA123B;
+    
+  } */

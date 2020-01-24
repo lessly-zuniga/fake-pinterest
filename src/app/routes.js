@@ -13,9 +13,11 @@ module.exports = (app, passport) => {
 	});
 	//app.post('./login', (req, res) => {});
 
-	app.post('/login', (req, res) => {
-		res.send('Laboratoria');
-	});
+	app.post('/login', passport.authenticate('local', {
+		successRedirect: '/feed',
+		failureRedirect: '/login',
+		failureFlash: true
+	}));
 
 	// signup view
 	app.get('/signup', (req, res) => {

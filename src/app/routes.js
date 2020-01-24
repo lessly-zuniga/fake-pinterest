@@ -13,7 +13,7 @@ module.exports = (app, passport) => {
 	});
 	//app.post('./login', (req, res) => {});
 
-	app.post('/login', passport.authenticate('local', {
+	app.post('/login', passport.authenticate('login', {
 		successRedirect: '/feed',
 		failureRedirect: '/login',
 		failureFlash: true

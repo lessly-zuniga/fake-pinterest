@@ -13,7 +13,7 @@ module.exports = (app, passport) => {
 	});
 	//app.post('./login', (req, res) => {});
 
-	app.post('/login', passport.authenticate('local-login',{
+	app.post('/login', passport.authenticate('login',{
 		successRedirect: '/feed',
 		failureRedirect: '/login',
 		failureFlash: true
@@ -27,7 +27,7 @@ module.exports = (app, passport) => {
 	});
 
 	app.post('./signup', (req, res) =>{})
-	app.post('/signup', passport.authenticate('local-signup', {
+	app.post('/signup', passport.authenticate('signup', {
 		successRedirect: '/feed',
 		failureRedirect: '/signup',
 		failureFlash: true // allow flash messages
@@ -35,11 +35,11 @@ module.exports = (app, passport) => {
 
 	//profile view
 
-	//  app.get('/profile', isLoggedIn, (req, res) => {
-	//  	res.render('profile',  {
-	//  		user: req.user
-	//  	});
-	//  });
+	  app.get('/profile', isLoggedIn, (req, res) => {
+	  	res.render('profile',  {
+	  		user: req.user
+	  	});
+	  });
 
 	// logout
 

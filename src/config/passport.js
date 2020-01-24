@@ -17,7 +17,7 @@ module.exports = function (passport) {
   });
 
   // Signup
-  passport.use('local-signup', new LocalStrategy({
+  passport.use('signup', new LocalStrategy({
     // by default, local strategy uses username and password, we will override with email
     usernameField: 'email',
     passwordField: 'password',
@@ -45,7 +45,7 @@ module.exports = function (passport) {
   // login
   // we are using named strategies since we have one for login and one for signup
   // by default, if there was no name, it would just be called 'local
-  passport.use('local-login', new LocalStrategy({
+  passport.use('login', new LocalStrategy({
     usernameField: 'email',
     passwordField: 'password',
     passReqToCallback: true
